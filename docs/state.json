@@ -1,14 +1,111 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:30:00Z",
+  "updated_at": "2026-11-27T16:33:03Z",
   "features": {
-    "F01": { "name": "Fundação e Contas", "wave": 1, "dependencies": [], "folder": "docs/features/F01-fundacao-contas", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F02": { "name": "Gestão de Eventos", "wave": 2, "dependencies": ["F01"], "folder": "docs/features/F02-gestao-eventos", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F03": { "name": "Compra e Gateway", "wave": 3, "dependencies": ["F01", "F02"], "folder": "docs/features/F03-compra-gateway", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F04": { "name": "API de Parceiros", "wave": 4, "dependencies": ["F02", "F03"], "folder": "docs/features/F04-api-parceiros", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F05": { "name": "Check-in", "wave": 4, "dependencies": ["F02", "F03"], "folder": "docs/features/F05-checkin", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F06": { "name": "Painel do Evento", "wave": 4, "dependencies": ["F02", "F03"], "folder": "docs/features/F06-painel", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null },
-    "F07": { "name": "Cancelamento de Evento", "wave": 5, "dependencies": ["F02", "F03", "F04", "F05", "F06"], "folder": "docs/features/F07-cancelamento", "branch": null, "pr": null, "status": "pending", "cycles": 0, "report_path": null, "completed_at": null }
+    "F01": {
+      "name": "Fundação e Contas",
+      "wave": 1,
+      "dependencies": [],
+      "folder": "docs/features/F01-fundacao-contas",
+      "branch": "feat/F01-fundacao-contas",
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/1",
+      "status": "done",
+      "cycles": 1,
+      "report_path": "docs/features/F01-fundacao-contas/reports/eval-20261127T163116Z.md",
+      "completed_at": "2026-11-27T16:33:03Z"
+    },
+    "F02": {
+      "name": "Gestão de Eventos",
+      "wave": 2,
+      "dependencies": [
+        "F01"
+      ],
+      "folder": "docs/features/F02-gestao-eventos",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    },
+    "F03": {
+      "name": "Compra e Gateway",
+      "wave": 3,
+      "dependencies": [
+        "F01",
+        "F02"
+      ],
+      "folder": "docs/features/F03-compra-gateway",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    },
+    "F04": {
+      "name": "API de Parceiros",
+      "wave": 4,
+      "dependencies": [
+        "F02",
+        "F03"
+      ],
+      "folder": "docs/features/F04-api-parceiros",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    },
+    "F05": {
+      "name": "Check-in",
+      "wave": 4,
+      "dependencies": [
+        "F02",
+        "F03"
+      ],
+      "folder": "docs/features/F05-checkin",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    },
+    "F06": {
+      "name": "Painel do Evento",
+      "wave": 4,
+      "dependencies": [
+        "F02",
+        "F03"
+      ],
+      "folder": "docs/features/F06-painel",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    },
+    "F07": {
+      "name": "Cancelamento de Evento",
+      "wave": 5,
+      "dependencies": [
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06"
+      ],
+      "folder": "docs/features/F07-cancelamento",
+      "branch": null,
+      "pr": null,
+      "status": "pending",
+      "cycles": 0,
+      "report_path": null,
+      "completed_at": null
+    }
   }
 }

@@ -1,0 +1,41 @@
+name: catraca
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: catraca
+      POSTGRES_PASSWORD: catraca
+      POSTGRES_DB: catraca
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catraca -d catraca"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  app:
+    build:
+      context: .
+      target: runtime
+    environment:
+      DATABASE_URL: postgres://catraca:catraca@db:5432/catraca
+      PORT: "3000"
+      PARTNER_API_KEY: ${PARTNER_API_KEY:-catraca-parceiro-2026}
+      # Modo padrão: gateway simulado com os tempos do brief (escala 1).
+      GATEWAY_DELAY_SCALE: "1"
+    ports:
+      - "${CATRACA_PORT:-3000}:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/health || exit 1"]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+      start_period: 5s
+
+volumes:
+  dbdata:
