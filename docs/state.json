@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:45:01Z",
+  "updated_at": "2026-11-27T16:53:07Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -82,12 +82,14 @@
         "F03"
       ],
       "folder": "docs/features/F06-painel",
-      "branch": null,
-      "pr": null,
-      "status": "pending",
+      "branch": "feat/F06-painel",
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/4",
+      "status": "done",
       "cycles": 0,
-      "report_path": null,
-      "completed_at": null
+      "report_path": "docs/features/F06-painel/reports/eval-20261127T164944Z.md",
+      "completed_at": "2026-11-27T16:53:07Z",
+      "started_at": "2026-11-27T16:45:53Z",
+      "updated_at": "2026-11-27T16:53:07Z"
     },
     "F07": {
       "name": "Cancelamento de Evento",
