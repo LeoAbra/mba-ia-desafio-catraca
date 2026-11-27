@@ -3,8 +3,8 @@ import type { Config } from './config.js';
 import type { Pool } from './db/pool.js';
 import { accountsRouter } from './features/accounts/accounts.router.js';
 import { sessionMiddleware } from './features/accounts/sessions.js';
+import { cancelRouter, cancelSection } from './features/cancellation/cancel.router.js';
 import { checkinRouter, checkinSection } from './features/checkin/checkin.router.js';
-
 import { dashboardSection } from './features/dashboard/dashboard.section.js';
 import { eventsRouter } from './features/events/events.router.js';
 import { partnerRouter } from './features/partner-api/partner.router.js';
@@ -70,6 +70,10 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
 
   // F06 — painel do evento na página de gerenciamento (R12).
   ctx.extensions.managePageSections.push(dashboardSection(pool));
+
+  // F07 — cancelamento irreversível com migração atômica dos ingressos (R11).
+  ctx.extensions.managePageSections.push(cancelSection);
+  app.use(cancelRouter({ pool, extensions: ctx.extensions }));
 
   app.use((req: Request, res: Response) => {
     res.status(404).send(layout('Página não encontrada', req.user, html`<p>Página não encontrada.</p>`));
