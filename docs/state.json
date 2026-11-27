@@ -106,12 +106,13 @@
         "F06"
       ],
       "folder": "docs/features/F07-cancelamento",
-      "branch": null,
+      "branch": "feat/F07-cancelamento",
       "pr": null,
-      "status": "pending",
+      "status": "implementing",
       "cycles": 0,
       "report_path": null,
-      "completed_at": null
+      "completed_at": null,
+      "started_at": "2026-11-27T16:55:22Z"
     }
   }
 }
