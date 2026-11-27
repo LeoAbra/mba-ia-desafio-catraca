@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:38:56Z",
+  "updated_at": "2026-11-27T16:40:34Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -37,9 +37,9 @@
         "F02"
       ],
       "folder": "docs/features/F03-compra-gateway",
-      "branch": null,
+      "branch": "feat/F03-compra-gateway",
       "pr": null,
-      "status": "pending",
+      "status": "implemented",
       "cycles": 0,
       "report_path": null,
       "completed_at": null
