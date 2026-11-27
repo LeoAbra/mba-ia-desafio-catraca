@@ -52,12 +52,13 @@
         "F03"
       ],
       "folder": "docs/features/F04-api-parceiros",
-      "branch": null,
+      "branch": "feat/F04-api-parceiros",
       "pr": null,
-      "status": "pending",
+      "status": "implementing",
       "cycles": 0,
       "report_path": null,
-      "completed_at": null
+      "completed_at": null,
+      "started_at": "2026-11-27T16:45:45Z"
     },
     "F05": {
       "name": "Check-in",
