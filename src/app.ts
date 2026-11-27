@@ -4,6 +4,7 @@ import type { Pool } from './db/pool.js';
 import { accountsRouter } from './features/accounts/accounts.router.js';
 import { sessionMiddleware } from './features/accounts/sessions.js';
 import { eventsRouter } from './features/events/events.router.js';
+import { partnerRouter } from './features/partner-api/partner.router.js';
 import { SimulatedGateway } from './features/purchases/gateway.js';
 import { PaymentProcessor } from './features/purchases/payments.processor.js';
 import { capacityGuard, purchaseSection, purchasesRouter } from './features/purchases/purchases.router.js';
@@ -56,6 +57,9 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
   ctx.extensions.eventPageSections.push(purchaseSection(pool));
   ctx.extensions.capacityGuards.push(capacityGuard);
   app.use(purchasesRouter({ pool, payments, extensions: ctx.extensions }));
+
+  // F04 — API de parceiros em /api/partner (JSON; antes do 404 HTML).
+  app.use('/api/partner', partnerRouter({ pool, payments, apiKey: config.partnerApiKey }));
 
   app.use((req: Request, res: Response) => {
     res.status(404).send(layout('Página não encontrada', req.user, html`<p>Página não encontrada.</p>`));
