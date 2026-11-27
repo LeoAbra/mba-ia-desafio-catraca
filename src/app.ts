@@ -2,8 +2,9 @@ import express, { type Express, type NextFunction, type Request, type Response }
 import type { Config } from './config.js';
 import type { Pool } from './db/pool.js';
 import { accountsRouter } from './features/accounts/accounts.router.js';
-import { requireOrganizer, requireParticipant } from './features/accounts/guards.js';
+import { requireParticipant } from './features/accounts/guards.js';
 import { sessionMiddleware } from './features/accounts/sessions.js';
+import { eventsRouter } from './features/events/events.router.js';
 import { createExtensions, type Extensions } from './shared/extensions.js';
 import { html } from './shared/html.js';
 import { layout } from './shared/layout.js';
@@ -39,17 +40,13 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
   app.use(sessionMiddleware(pool));
   app.use(accountsRouter(pool));
 
-  // Vitrine e área do organizador mínimas; F02 substitui.
-  app.get('/', (req, res) => {
-    res.send(layout('Vitrine', req.user, html`<p>Nenhum evento à venda no momento.</p>`));
-  });
   // Página do participante protegida desde F01; F03 preenche com os ingressos.
   app.get('/meus-ingressos', requireParticipant, (req, res) => {
     res.send(layout('Meus ingressos', req.user, html`<p>Você ainda não tem ingressos.</p>`));
   });
-  app.get('/organizador', requireOrganizer, (req, res) => {
-    res.send(layout('Meus eventos', req.user, html`<p>Você ainda não tem eventos.</p>`));
-  });
+
+  // F02 — vitrine, página pública e área do organizador (extensões preenchidas pelas features seguintes).
+  app.use(eventsRouter({ pool, extensions: ctx.extensions }));
 
   app.use((req: Request, res: Response) => {
     res.status(404).send(layout('Página não encontrada', req.user, html`<p>Página não encontrada.</p>`));
