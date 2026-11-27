@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:54:25Z",
+  "updated_at": "2026-11-27T16:59:14Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -108,7 +108,7 @@
       "folder": "docs/features/F07-cancelamento",
       "branch": "feat/F07-cancelamento",
       "pr": null,
-      "status": "implementing",
+      "status": "implemented",
       "cycles": 0,
       "report_path": null,
       "completed_at": null,
