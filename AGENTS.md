@@ -27,7 +27,7 @@ Catraca: venda de ingressos para eventos pequenos. Leia este arquivo antes de qu
 
 ## Código
 
-- Stack: Node.js 22 + TypeScript + Express 4 (HTML renderizado no servidor) + PostgreSQL 16 (`pg`). Testes: Vitest + Supertest.
+- Stack: Node.js 22 + TypeScript + Express 5 (HTML renderizado no servidor) + PostgreSQL 16 (`pg`). Testes: Vitest + Supertest.
 - `src/app.ts` é a raiz de composição: cria pool, serviços e registra os routers das features.
 - Cada feature vive em `src/features/<nome>/`. Pontos de extensão entre features ficam em `src/shared/extensions.ts`.
 - Migrações SQL em `db/migrations/NNN_fxx_descricao.sql` (aplicadas em ordem no boot, sob advisory lock).
