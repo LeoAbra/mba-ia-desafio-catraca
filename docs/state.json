@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:26:48Z",
+  "updated_at": "2026-11-27T16:33:03Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -9,11 +9,11 @@
       "dependencies": [],
       "folder": "docs/features/F01-fundacao-contas",
       "branch": "feat/F01-fundacao-contas",
-      "pr": null,
-      "status": "implemented",
-      "cycles": 0,
-      "report_path": null,
-      "completed_at": null
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/1",
+      "status": "done",
+      "cycles": 1,
+      "report_path": "docs/features/F01-fundacao-contas/reports/eval-20261127T163116Z.md",
+      "completed_at": "2026-11-27T16:33:03Z"
     },
     "F02": {
       "name": "Gestão de Eventos",
