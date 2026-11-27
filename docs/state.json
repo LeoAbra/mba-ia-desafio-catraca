@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:33:03Z",
+  "updated_at": "2026-11-27T16:35:24Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -22,9 +22,9 @@
         "F01"
       ],
       "folder": "docs/features/F02-gestao-eventos",
-      "branch": null,
+      "branch": "feat/F02-gestao-eventos",
       "pr": null,
-      "status": "pending",
+      "status": "implemented",
       "cycles": 0,
       "report_path": null,
       "completed_at": null
