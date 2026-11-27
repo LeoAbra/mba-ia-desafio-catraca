@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:53:39Z",
+  "updated_at": "2026-11-27T16:54:25Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -53,12 +53,13 @@
       ],
       "folder": "docs/features/F04-api-parceiros",
       "branch": "feat/F04-api-parceiros",
-      "pr": null,
-      "status": "implementing",
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/5",
+      "status": "done",
       "cycles": 0,
-      "report_path": null,
-      "completed_at": null,
-      "started_at": "2026-11-27T16:45:45Z"
+      "report_path": "docs/features/F04-api-parceiros/reports/eval-20261127T164944Z.md",
+      "completed_at": "2026-11-27T16:54:25Z",
+      "started_at": "2026-11-27T16:45:45Z",
+      "updated_at": "2026-11-27T16:54:25Z"
     },
     "F05": {
       "name": "Check-in",
