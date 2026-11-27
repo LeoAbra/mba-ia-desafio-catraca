@@ -82,12 +82,13 @@
         "F03"
       ],
       "folder": "docs/features/F06-painel",
-      "branch": null,
+      "branch": "feat/F06-painel",
       "pr": null,
-      "status": "pending",
+      "status": "implementing",
       "cycles": 0,
       "report_path": null,
-      "completed_at": null
+      "completed_at": null,
+      "started_at": "2026-11-27T16:45:53Z"
     },
     "F07": {
       "name": "Cancelamento de Evento",
