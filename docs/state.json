@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:40:34Z",
+  "updated_at": "2026-11-27T16:45:01Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -38,11 +38,11 @@
       ],
       "folder": "docs/features/F03-compra-gateway",
       "branch": "feat/F03-compra-gateway",
-      "pr": null,
-      "status": "implemented",
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/3",
+      "status": "done",
       "cycles": 0,
-      "report_path": null,
-      "completed_at": null
+      "report_path": "docs/features/F03-compra-gateway/reports/eval-20261127T164114Z.md",
+      "completed_at": "2026-11-27T16:45:01Z"
     },
     "F04": {
       "name": "API de Parceiros",
