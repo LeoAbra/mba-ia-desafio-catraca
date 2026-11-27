@@ -86,7 +86,7 @@ describe('F01 login/logout (AC-F01-03, AC-F01-04)', () => {
     const login = await request(env.catraca.app).post('/entrar').type('form').send({ email: PARTICIPANT, password: 'catraca123' });
     const cookie = String(login.headers['set-cookie']).split(';')[0] ?? '';
     await request(env.catraca.app).post('/sair').set('Cookie', cookie);
-    const res = await request(env.catraca.app).get('/organizador').set('Cookie', cookie);
+    const res = await request(env.catraca.app).get('/meus-ingressos').set('Cookie', cookie);
     expect(res.status).toBe(302);
     expect(res.headers.location).toMatch(/^\/entrar/);
   });
@@ -97,6 +97,17 @@ describe('F01 guardas (AC-F01-06)', () => {
     const res = await request(env.catraca.app).get('/organizador');
     expect(res.status).toBe(302);
     expect(res.headers.location).toMatch(/^\/entrar\?next=/);
+  });
+
+  it('visitante em página de participante vai para o login (regressão UI-GUARD-03)', async () => {
+    const res = await request(env.catraca.app).get('/meus-ingressos');
+    expect(res.status).toBe(302);
+    expect(res.headers.location).toMatch(/^\/entrar\?next=/);
+  });
+
+  it('organizador não acessa página de participante', async () => {
+    const agent = await loginAs(env, ORG_A);
+    expect((await agent.get('/meus-ingressos')).status).toBe(403);
   });
 
   it('participante recebe 403', async () => {

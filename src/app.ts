@@ -2,7 +2,7 @@ import express, { type Express, type NextFunction, type Request, type Response }
 import type { Config } from './config.js';
 import type { Pool } from './db/pool.js';
 import { accountsRouter } from './features/accounts/accounts.router.js';
-import { requireOrganizer } from './features/accounts/guards.js';
+import { requireOrganizer, requireParticipant } from './features/accounts/guards.js';
 import { sessionMiddleware } from './features/accounts/sessions.js';
 import { createExtensions, type Extensions } from './shared/extensions.js';
 import { html } from './shared/html.js';
@@ -42,6 +42,10 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
   // Vitrine e área do organizador mínimas; F02 substitui.
   app.get('/', (req, res) => {
     res.send(layout('Vitrine', req.user, html`<p>Nenhum evento à venda no momento.</p>`));
+  });
+  // Página do participante protegida desde F01; F03 preenche com os ingressos.
+  app.get('/meus-ingressos', requireParticipant, (req, res) => {
+    res.send(layout('Meus ingressos', req.user, html`<p>Você ainda não tem ingressos.</p>`));
   });
   app.get('/organizador', requireOrganizer, (req, res) => {
     res.send(layout('Meus eventos', req.user, html`<p>Você ainda não tem eventos.</p>`));
