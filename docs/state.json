@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "prd_path": "docs/PRD.md",
-  "updated_at": "2026-11-27T16:35:24Z",
+  "updated_at": "2026-11-27T16:38:56Z",
   "features": {
     "F01": {
       "name": "Fundação e Contas",
@@ -23,11 +23,11 @@
       ],
       "folder": "docs/features/F02-gestao-eventos",
       "branch": "feat/F02-gestao-eventos",
-      "pr": null,
-      "status": "implemented",
+      "pr": "https://github.com/LeoAbra/mba-ia-desafio-catraca/pull/2",
+      "status": "done",
       "cycles": 0,
-      "report_path": null,
-      "completed_at": null
+      "report_path": "docs/features/F02-gestao-eventos/reports/eval-20261127T163546Z.md",
+      "completed_at": "2026-11-27T16:38:56Z"
     },
     "F03": {
       "name": "Compra e Gateway",
