@@ -3,6 +3,7 @@ import type { Config } from './config.js';
 import type { Pool } from './db/pool.js';
 import { accountsRouter } from './features/accounts/accounts.router.js';
 import { sessionMiddleware } from './features/accounts/sessions.js';
+import { dashboardSection } from './features/dashboard/dashboard.section.js';
 import { eventsRouter } from './features/events/events.router.js';
 import { SimulatedGateway } from './features/purchases/gateway.js';
 import { PaymentProcessor } from './features/purchases/payments.processor.js';
@@ -56,6 +57,9 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
   ctx.extensions.eventPageSections.push(purchaseSection(pool));
   ctx.extensions.capacityGuards.push(capacityGuard);
   app.use(purchasesRouter({ pool, payments, extensions: ctx.extensions }));
+
+  // F06 — painel do evento na página de gerenciamento (R12).
+  ctx.extensions.managePageSections.push(dashboardSection(pool));
 
   app.use((req: Request, res: Response) => {
     res.status(404).send(layout('Página não encontrada', req.user, html`<p>Página não encontrada.</p>`));
