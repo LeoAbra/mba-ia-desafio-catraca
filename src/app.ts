@@ -7,6 +7,7 @@ import { checkinRouter, checkinSection } from './features/checkin/checkin.router
 
 import { dashboardSection } from './features/dashboard/dashboard.section.js';
 import { eventsRouter } from './features/events/events.router.js';
+import { partnerRouter } from './features/partner-api/partner.router.js';
 import { SimulatedGateway } from './features/purchases/gateway.js';
 import { PaymentProcessor } from './features/purchases/payments.processor.js';
 import { capacityGuard, purchaseSection, purchasesRouter } from './features/purchases/purchases.router.js';
@@ -59,6 +60,9 @@ export function createApp(pool: Pool, config: Config): CatracaApp {
   ctx.extensions.eventPageSections.push(purchaseSection(pool));
   ctx.extensions.capacityGuards.push(capacityGuard);
   app.use(purchasesRouter({ pool, payments, extensions: ctx.extensions }));
+
+  // F04 — API de parceiros em /api/partner (JSON; antes do 404 HTML).
+  app.use('/api/partner', partnerRouter({ pool, payments, apiKey: config.partnerApiKey }));
 
   // F05 — check-in na página de gerenciamento (R10).
   ctx.extensions.managePageSections.push(checkinSection);
